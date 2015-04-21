@@ -91,4 +91,14 @@ $(function () {
 
 I am using a customTemplate wrapper around the existing underscore template to provide a helper function called "view". I simply pass the child view to the helper within the template like so "<%= view(child) %>". Then in the parents render I call "this.template(data, this.$el)" which handles rendering the parent with a placeholder for the view, sticking it in the DOM and rendering all nested children added with the helper and placing them in the DOM.
 
- I like this solution because it doesn't require extending the existing Backbone.View or bringing in an outside custom templating library. It also can be plugged in seamlessly to any existing Backbone project. As an added bonus, rendering the parent is idempotent (verify).
+I like this solution because it doesn't require extending the existing Backbone.View or bringing in an outside custom templating library. It also can be plugged in seamlessly to any existing Backbone project. As an added bonus, rendering the parent is idempotent (verify).
+
+TODO: need to update with delegateEvents method from code below
+
+Here is a working interactive solution: http://jsfiddle.net/UJmGD/863/
+
+Sources:
+http://addyosmani.github.io/backbone-fundamentals/#embedding-child-views
+https://lostechies.com/derickbailey/2012/04/26/view-helpers-for-underscore-templates/
+http://pragmatic-backbone.com/views
+http://addyosmani.github.io/backbone-fundamentals/#thorax
