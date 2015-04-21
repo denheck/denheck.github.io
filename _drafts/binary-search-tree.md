@@ -5,7 +5,7 @@ date:   2015-03-18 21:35:12
 categories: algorithms data-structures
 ---
 
-A binary search tree is a recursive data structure useful for storing data in a quickly retrievable manner. It finds a stored value by bisecting the number of values contained in the tree with each recursive search iteration until a single value is left. Storing data in this manner is much more efficient than using a basic unsorted array. In this article, I will briefly show examples of a binary search tree in javascript and compare it to an unsorted array.
+A binary search tree is a recursive data structure useful for storing data so it can be quickly retrieved. It finds a stored value by bisecting the data in the tree with each successive search iteration until a single value is left. Storing data in this manner is much more efficient than using a basic unsorted array. In this post, I will show examples of a binary search tree in javascript and compare it to an unsorted array.
 
 Say I have an unsorted array containing 10 numbers. If I want to find out if 3 is in the array, I would have to search through each number linearly. Something like this:
 
@@ -69,28 +69,19 @@ Tree.prototype.lookup = function (data) {
 
 The code above describes a basic tree structure with a lookup and insert method. Before adding ten numbers and searching, I will describe how a simplified version of the tree works.
 
-First, I create a tree using the new operator passing it the data value 2.
+First, I create a tree passing it the data value 2 add inserting two additional values to the tree.
 
 {% highlight javascript %}
 
 var tree = new Tree(2);
-
-{% endhighlight %}
-
-Now I will add two more data values to the tree.
-
-Upon inserting the value 1 into the tree it will compare 1 to it's existing value, in this case 2, and decide if it should create another tree on it's left or right property. If the value is less than or equal to the tree's existing value it will create a new tree on the left containing the inserted value. If it is greater than the tree's existing value it will create a new tree on the right containing the inserted value.
-
-The code below will create a tree with 1 on the left property of the tree calling the method and a tree with 3 on the right property of the tree calling the method.
-
-{% highlight javascript %}
-
 tree.insert(1);
 tree.insert(3);
 
 {% endhighlight %}
 
-The tree will end up looking like the following object literal:
+When inserting 1 into the tree it will be compared to the tree's existing value, in this case 2. The tree will then decide if it should create another tree with the inserted value on it's left or right property. If the value is less than or equal to the tree's existing value the new tree will be created on the right. If it is greater than the tree's existing value it will be created on the left.
+
+The parent tree will end up looking like the following object literal:
 
 {% highlight javascript %}
 
@@ -110,7 +101,7 @@ var tree = {
 
 {% endhighlight %}
 
-This may not seem like much but as the amount of data stored in the tree increases it becomes more useful. Now I am going to create a tree building function to demonstrate how much faster we can find the number 3 in a group of 10 numbers.
+The example above may not seem like much but as the amount of data stored in the tree increases it becomes more useful. To demonstrate this I am going to show how fast it can find the number 3 in a group of 10 numbers. In order to do this, I will start by creating a helper function to make building the tree much easier.
 
 {% highlight javascript %}
 
@@ -144,11 +135,11 @@ tree.lookup(3); // true
 
 {% endhighlight %}
 
-I can find out if the number 3 exists in the tree in a maximum of 4 checks now.
+I can find out if the number 3 exists in the tree with a maximum of 4 checks.
 
-How does it work? Starting with the number 5 it determines that 3 is less than 5. The structure then knows it only needs to check the values in the structure less than 5, i.e. -10, 3, -15 and -18. Then coming to -10 it determines that 3 is greater than -10 so it is looking for a value less than 5 but greater than -10. The only value in the structure meeting that criteria is 3. So it returns the value 3.
+So, how does it work? Starting with the number 5 it determines that 3 is less than 5. The structure then knows it only needs to check the values in the structure less than 5, i.e. -10, 3, -15 and -18. Then coming to -10 it determines that 3 is greater than -10 so it is looking for a value less than 5 but greater than -10. The only value in the structure meeting that criteria is 3. So it returns the value 3.
 
-One issue with the build function is that it doesn't optimize the tree. This means if you pass Node.build(1,2,3,4) your lookups will be linear and take just as much time as the unsorted array we talked about earlier. For the best search performance a binary tree needs to be self-balancing.
+We just found our value in 3 checks. That's much better than the unsorted array which could have potentially taken 10! One issue with the build function is that it doesn't optimize the tree. This means if you pass Node.build(1,2,3,4) your lookups will be linear and take just as much time as the unsorted array we talked about earlier. For the best search performance a binary tree needs to be [self-balancing](http://en.wikipedia.org/wiki/Self-balancing_binary_search_tree).
 
 http://stackoverflow.com/questions/2130416/what-are-the-applications-of-binary-trees
 http://algs4.cs.princeton.edu/32bst/
