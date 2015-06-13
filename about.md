@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-When I told my wife what I was going to name my blog she didn't think people would get it. I had to explain how sometimes making decisions while building software often feels more like picking the "least bad" option rather than the "best". Whether due to time constraints, overly complex interfacing or sheer lack of motivation we pick the "least bad" option rather than the best.
+I started this blog to solidify my understanding of complex programming concepts and to help me retain information I don't use on a daily basis. It is sort of like my own version of Stack Overflow mixed with a random journal of my thoughts and reviews of other people's thoughts. If you find this place, I hope you enjoy it.
