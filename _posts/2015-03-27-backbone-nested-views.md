@@ -104,7 +104,7 @@ I am using a customTemplate wrapper around the existing Underscore template to p
 
 I like this solution because it doesn't require extending the existing Backbone.View or bringing in an outside custom templating library. It can also be plugged in seamlessly to any existing Backbone project. As an added bonus, rendering the parent is idempotent. That means I can call the render function as many times as I want without side effects.
 
-[Here is a working interactive solution](http://jsfiddle.net/UJmGD/935/)
+[Here is a working interactive solution](http://jsfiddle.net/UJmGD/1016/)
 
 Additional information on nested view handling:
 [Backbone Fundamentals](http://addyosmani.github.io/backbone-fundamentals),
