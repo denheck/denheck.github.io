@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Under the Hood: Underscore's bindAll"
-date:   2015-03-27 16:36:00
+date:   2015-09-04 08:45:00
 categories: javascript
 ---
 
