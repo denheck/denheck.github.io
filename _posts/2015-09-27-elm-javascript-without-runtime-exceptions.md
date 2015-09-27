@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Elm: Javascript Without Runtime Exceptions"
-date:   2015-09-04 08:45:00
+date:   2015-09-27 12:30:00
 categories: javascript languages
 ---
 
