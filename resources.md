@@ -33,3 +33,7 @@ permalink: /resources/
 
 ## Haskell
 [Learn you a Haskell](http://learnyouahaskell.com/)
+
+## Talks
+
+[BathRuby 2015 - Nothing is Something - Sandi Metz](https://www.youtube.com/watch?v=9lv2lBq6x4A)
